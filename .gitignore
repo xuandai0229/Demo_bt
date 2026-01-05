@@ -1,0 +1,7 @@
+﻿Demo_2d/UserSettings
+*.csproj
+Demo_2d/Temp
+Demo_2d/Logs
+Demo_2d/Library
+Demo_2d/.vsconfig
+Demo_2d/Demo_2d.sln
