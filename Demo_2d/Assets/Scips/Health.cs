@@ -4,6 +4,7 @@ public class Health : MonoBehaviour
 {
     public GameObject explosionPrefab;
     public int defaultHealthPoint = 3;
+    public System.Action onDead;
 
     protected int healthPoint;
 
@@ -24,15 +25,13 @@ public class Health : MonoBehaviour
         }
     }
 
+    
+
+
     protected virtual void Die()
     {
-        var explosion = Instantiate(
-            explosionPrefab,
-            transform.position,
-            transform.rotation
-        );
-
-        Destroy(explosion, 1);
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
+        onDead?.Invoke();
     }
 }
