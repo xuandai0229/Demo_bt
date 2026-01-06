@@ -1,16 +1,21 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     public GameObject explosionPrefab;
-    public int defaultHealthPoint = 3;
-    public System.Action onDead;
 
-    protected int healthPoint;
+    public int defaultHealthPoint = 3;
+    
+
+    public System.Action onDead;
+    public System.Action onHealthChanged;
+
+    public int healthPoint;
 
     void Start()
     {
         healthPoint = defaultHealthPoint;
+        onHealthChanged?.Invoke();
     }
 
     public void TakeDamage(int damage)
@@ -18,6 +23,8 @@ public class Health : MonoBehaviour
         if (healthPoint <= 0) return;
 
         healthPoint -= damage;
+        Debug.Log("HP hiện tại = " + healthPoint);
+        onHealthChanged?.Invoke();
 
         if (healthPoint <= 0)
         {

@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Planet
+  - Enemy
+  - Bonus
+  - Projectile
+  - Score
+  - Health
+  - CoinsText
+  - Coin
+  - PlayerRay
+  - Rocket
   layers:
   - Default
   - TransparentFX
@@ -42,10 +52,10 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Player
-    uniqueID: 939052931
+    uniqueID: 1899497455
     locked: 0
-  - name: Enemy
-    uniqueID: 326871619
+  - name: Emney
+    uniqueID: 3592415763
     locked: 0
   m_RenderingLayers:
   - Default
