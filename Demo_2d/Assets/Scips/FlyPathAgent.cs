@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlyPathAgent : MonoBehaviour
 {
@@ -9,6 +9,12 @@ public class FlyPathAgent : MonoBehaviour
 
     void Start()
     {
+        if (flyPath == null)
+        {
+            Debug.LogError("FlyPath chưa được gán!");
+            return;
+        }
+
         transform.position = flyPath[0];
     }
 
@@ -21,7 +27,6 @@ public class FlyPathAgent : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
 
         if (transform.position != flyPath[nextIndex])
         {
@@ -53,5 +58,4 @@ public class FlyPathAgent : MonoBehaviour
         float angle = Vector2.SignedAngle(Vector2.down, lookDirection);
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
-
 }
